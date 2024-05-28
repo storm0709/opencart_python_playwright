@@ -3,7 +3,7 @@ from playwright.sync_api import Page
 
 class LoginPage:
 
-    URL = 'index.php?route=account/login'
+    URL = '/index.php?route=account/login'
 
     def __init__(self, page: Page) -> None:
         self.page = page
