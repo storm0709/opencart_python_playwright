@@ -14,15 +14,9 @@ def test_reg_user_valid_creds(set_up_tear_down) -> None:
     expected_cong_msg = "Your Account Has Been Created!"
 
     page = set_up_tear_down
-    home_p = HomePage(page)
+    #home_p = HomePage(page)
     acct_reg_p = AccountRegistrationPage(page)
-
-    #home_p.load_home_page()
-    # home_p.click_my_account()
-    # home_p.click_register()
-
     acct_reg_p.load_reg_acct_page()
-
     acct_reg_p.do_registration(f_name, l_name, email, tel, pwd, pwd_conf)
 
     expect(acct_reg_p.get_confirmation_msg).to_have_text(expected_cong_msg)
